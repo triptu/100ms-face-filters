@@ -1,9 +1,10 @@
 import {
   selectIsConnectedToRoom,
   useHMSActions,
-  useHMSStore
+  useHMSStore,
 } from "@100mslive/hms-video-react";
 import React from "react";
+import { grayScalePlugin, PluginButton } from "./plugin";
 
 function Header() {
   const isConnected = useHMSStore(selectIsConnectedToRoom);
@@ -17,13 +18,16 @@ function Header() {
         alt="logo"
       />
       {isConnected && (
-        <button
-          id="leave-btn"
-          class="btn-danger"
-          onClick={() => hmsActions.leave()}
-        >
-          Leave Room
-        </button>
+        <div>
+          <PluginButton plugin={grayScalePlugin} name={"Grayscale"} />
+          <button
+            id="leave-btn"
+            className="btn btn-danger"
+            onClick={() => hmsActions.leave()}
+          >
+            Leave Room
+          </button>
+        </div>
       )}
     </header>
   );
