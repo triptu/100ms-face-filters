@@ -18,3 +18,17 @@ the steps [here](https://docs.100ms.live/javascript/v2/guides/token).
 * Grayscale Filter
 
 ![Grayscale](./public/grayscale.gif)
+
+## Running locally
+
+Install the packages -
+
+```sh
+yarn install
+```
+
+Start the dev server -
+
+```sh
+yarn start
+```
