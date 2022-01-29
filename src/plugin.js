@@ -9,7 +9,7 @@ import React from "react";
 export const grayScalePlugin = new GrayscalePlugin();
 export function PluginButton({ plugin, name }) {
   const isPluginAdded = useHMSStore(
-    selectIsLocalVideoPluginPresent(grayScalePlugin.getName())
+    selectIsLocalVideoPluginPresent(plugin.getName())
   );
   const hmsActions = useHMSActions();
 
