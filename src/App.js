@@ -6,8 +6,8 @@ import { useEffect } from "react";
 import {
   selectIsConnectedToRoom,
   useHMSActions,
-  useHMSStore
-} from "@100mslive/hms-video-react";
+  useHMSStore,
+} from "@100mslive/react-sdk";
 import Footer from "./Footer";
 
 export default function App() {

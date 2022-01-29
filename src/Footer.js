@@ -2,8 +2,8 @@ import {
   selectIsLocalAudioEnabled,
   selectIsLocalVideoEnabled,
   useHMSActions,
-  useHMSStore
-} from "@100mslive/hms-video-react";
+  useHMSStore,
+} from "@100mslive/react-sdk";
 
 function Footer() {
   const videoEnabled = useHMSStore(selectIsLocalVideoEnabled);

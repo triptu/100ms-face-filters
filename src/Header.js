@@ -2,7 +2,7 @@ import {
   selectIsConnectedToRoom,
   useHMSActions,
   useHMSStore,
-} from "@100mslive/hms-video-react";
+} from "@100mslive/react-sdk";
 import React from "react";
 import { grayScalePlugin, PluginButton } from "./plugin";
 
