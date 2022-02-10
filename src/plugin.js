@@ -3,13 +3,13 @@ import {
   selectIsLocalVideoPluginPresent,
   useHMSActions,
   useHMSStore,
-} from "@100mslive/hms-video-react";
+} from "@100mslive/react-sdk";
 import React from "react";
 
 export const grayScalePlugin = new GrayscalePlugin();
 export function PluginButton({ plugin, name }) {
   const isPluginAdded = useHMSStore(
-    selectIsLocalVideoPluginPresent(grayScalePlugin.getName())
+    selectIsLocalVideoPluginPresent(plugin.getName())
   );
   const hmsActions = useHMSActions();
 

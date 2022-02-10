@@ -1,4 +1,4 @@
-import { selectPeers, useHMSStore } from "@100mslive/hms-video-react";
+import { selectPeers, useHMSStore } from "@100mslive/react-sdk";
 import Peer from "./Peer";
 
 function Conference() {
