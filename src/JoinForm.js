@@ -1,17 +1,17 @@
-import { useHMSActions } from "@100mslive/hms-video-react";
+import { useHMSActions } from "@100mslive/react-sdk";
 import { useState } from "react";
 
 function Join() {
   const hmsActions = useHMSActions();
   const [inputValues, setInputValues] = useState({
     name: "",
-    token: ""
+    token: "",
   });
 
   const handleInputChange = (e) => {
     setInputValues((prevValues) => ({
       ...prevValues,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     }));
   };
 
@@ -19,7 +19,7 @@ function Join() {
     e.preventDefault();
     hmsActions.join({
       userName: inputValues.name,
-      authToken: inputValues.token
+      authToken: inputValues.token,
     });
   };
 

@@ -1,6 +1,6 @@
 import { StrictMode } from "react";
 import ReactDOM from "react-dom";
-import { HMSRoomProvider } from "@100mslive/hms-video-react";
+import { HMSRoomProvider } from "@100mslive/react-sdk";
 
 import App from "./App";
 

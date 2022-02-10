@@ -1,8 +1,8 @@
 import {
   selectVideoTrackByPeerID,
   useHMSActions,
-  useHMSStore
-} from "@100mslive/hms-video-react";
+  useHMSStore,
+} from "@100mslive/react-sdk";
 import { useRef, useEffect } from "react";
 
 function Peer({ peer }) {

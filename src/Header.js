@@ -1,8 +1,8 @@
 import {
   selectIsConnectedToRoom,
   useHMSActions,
-  useHMSStore
-} from "@100mslive/hms-video-react";
+  useHMSStore,
+} from "@100mslive/react-sdk";
 import React from "react";
 
 function Header() {
@@ -19,7 +19,7 @@ function Header() {
       {isConnected && (
         <button
           id="leave-btn"
-          class="btn-danger"
+          className="btn-danger"
           onClick={() => hmsActions.leave()}
         >
           Leave Room
