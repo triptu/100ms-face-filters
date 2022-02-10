@@ -63,6 +63,8 @@ input::placeholder {
   font-family: inherit;
   font-size: 14px;
   cursor: pointer;
+  margin-left: 2px;
+  margin-right: 2px;
 }
 
 form h2,
@@ -167,4 +169,11 @@ form h2,
 
 .hide {
   display: none;
+}
+
+.subtext {
+  margin-top: 10px;
+  font-size: 14px;
+  margin-left: 2px;
+  color: #e84343;
 }
