@@ -1,5 +1,7 @@
 import { useHMSActions } from "@100mslive/react-sdk";
-import { useState } from "react";
+import { Fragment, useState } from "react";
+
+const publicToken = process.env.REACT_APP_PUBLIC_ROOM_TOKEN;
 
 function Join() {
   const hmsActions = useHMSActions();
@@ -15,17 +17,25 @@ function Join() {
     }));
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const handleSubmit = (joinPublicRoom) => {
+    if (!joinPublicRoom && !inputValues.token) {
+      console.error(
+        "You have neither provided a token nor choosing to join the public room"
+      );
+      return;
+    }
     hmsActions.join({
       userName: inputValues.name,
-      authToken: inputValues.token,
+      authToken: joinPublicRoom ? publicToken : inputValues.token,
       rememberDeviceSelection: true,
+      settings: {
+        isAudioMuted: true,
+      },
     });
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={(e) => e.preventDefault()}>
       <h2>Join Room</h2>
       <div className="input-container">
         <input
@@ -44,10 +54,22 @@ function Join() {
           id="token"
           type="text"
           name="token"
-          placeholder="Auth token"
+          placeholder="Auth token(or join the public room)"
         />
       </div>
-      <button className="btn-primary">Join</button>
+      <button className="btn-primary" onClick={() => handleSubmit()}>
+        Join
+      </button>
+      {publicToken && (
+        <Fragment>
+          <button className="btn-primary" onClick={() => handleSubmit(true)}>
+            Join Public Room
+          </button>
+          <p className="subtext">
+            Note: Public Room is shared across everyone visiting this page.
+          </p>
+        </Fragment>
+      )}
     </form>
   );
 }
