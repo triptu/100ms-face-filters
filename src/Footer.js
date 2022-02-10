@@ -1,30 +1,16 @@
-import {
-  selectIsLocalAudioEnabled,
-  selectIsLocalVideoEnabled,
-  useHMSActions,
-  useHMSStore,
-} from "@100mslive/react-sdk";
+import { useAVToggle } from "@100mslive/react-sdk";
 
 function Footer() {
-  const videoEnabled = useHMSStore(selectIsLocalVideoEnabled);
-  const audioEnabled = useHMSStore(selectIsLocalAudioEnabled);
-  const hmsActions = useHMSActions();
-
-  const toggleAudio = () => {
-    hmsActions.setLocalAudioEnabled(!audioEnabled);
-  };
-
-  const toggleVideo = () => {
-    hmsActions.setLocalVideoEnabled(!videoEnabled);
-  };
+  const { isLocalAudioEnabled, isLocalVideoEnabled, toggleAudio, toggleVideo } =
+    useAVToggle();
 
   return (
     <div className="control-bar">
       <button className="btn-control" onClick={toggleAudio}>
-        {audioEnabled ? "Mute" : "Unmute"}
+        {isLocalAudioEnabled ? "Mute" : "Unmute"}
       </button>
       <button className="btn-control" onClick={toggleVideo}>
-        {videoEnabled ? "Hide" : "Unhide"}
+        {isLocalVideoEnabled ? "Hide" : "Unhide"}
       </button>
     </div>
   );
