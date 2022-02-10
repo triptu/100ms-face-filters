@@ -79,6 +79,16 @@ form h2,
   font-family: inherit;
   font-size: 14px;
   cursor: pointer;
+  margin-left: 2px;
+  margin-right: 2px;
+}
+
+.camera-selection {
+  height: 34px;
+  outline: none;
+  max-width: 15vw;
+  margin-left: 2px;
+  margin-right: 2px;
 }
 
 .btn-danger {

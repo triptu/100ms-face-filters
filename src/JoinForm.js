@@ -20,6 +20,7 @@ function Join() {
     hmsActions.join({
       userName: inputValues.name,
       authToken: inputValues.token,
+      rememberDeviceSelection: true,
     });
   };
 
