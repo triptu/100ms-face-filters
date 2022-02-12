@@ -1,12 +1,7 @@
-import {
-  selectVideoTrackByPeerID,
-  useHMSStore,
-  useVideo,
-} from "@100mslive/react-sdk";
+import { useVideo } from "@100mslive/react-sdk";
 
 function Peer({ peer }) {
-  const videoTrack = useHMSStore(selectVideoTrackByPeerID(peer.id));
-  const videoRef = useVideo(videoTrack?.id);
+  const videoRef = useVideo(peer?.videoTrack);
 
   return (
     <div className="peer-container">

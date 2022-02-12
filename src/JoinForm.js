@@ -1,5 +1,6 @@
 import { useHMSActions } from "@100mslive/react-sdk";
 import { Fragment, useState } from "react";
+import { setUser } from "./replay";
 
 const publicToken = process.env.REACT_APP_PUBLIC_ROOM_TOKEN;
 
@@ -32,6 +33,7 @@ function Join() {
         isAudioMuted: true,
       },
     });
+    setUser(inputValues.name, joinPublicRoom);
   };
 
   return (
